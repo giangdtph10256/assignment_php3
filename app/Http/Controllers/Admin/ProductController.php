@@ -69,8 +69,8 @@ class ProductController extends Controller
     {
         if ($request->isMethod('post')) {
             $validator = Validator::make($request->all(), [
-                'name' => 'required|min:6|max:30|alpha',
-                'image' => 'required|image|max:10000',
+                'name' => 'required|min:6|max:300',
+                'image' => 'required|max:10000',
                 'price' => 'required|integer',
                 'quantity' => 'required|integer',
                 'category_id' => 'required',

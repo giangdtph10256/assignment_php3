@@ -18,12 +18,19 @@ use Database\Seeders\CateSeeder;
 |
 */
 
-Route::get('/','Front_end\page@getIndex')->name('front_end.index');
 Route::get('login', 'Auth\LoginController@GetLoginForm')->name('auth.getLoginForm');
-
 Route::post('login', 'Auth\LoginController@PostLogin')->name('auth.postLogin');
-
 Route::get('logout', 'Auth\LoginController@logout')->name('auth.logout');
+
+Route::get('/','Front_end\page@getIndex')->name('front_end.index');
+Route::get('detail-product','Front_end\DetailProductController@index')->name('detailPro');
+
+Route::get('shop','Front_end\page@shop')->name('shop');
+Route::get('category/{id}', 'Front_end\page@product')->name('cate-pro');
+Route::get('/detail/{id}','Front_end\page@detail_product')->name('detail');
+Route::get('/search','Front_end\page@search')->name('search.product');
+Route::get('/fillter','Front_end\page@fillter')->name('fillter');
+
 
 Route::get('/layout', function(){
     return view('layout');

@@ -35,7 +35,7 @@ class CateController extends Controller
     {
         if ($request->isMethod('post')) {
             $validator = Validator::make($request->all(),[
-                 'name' => 'required|min:6|max:30|alpha',
+                 'name' => 'required|min:3|max:30',
             ]);
          if($validator->fails()){
              return redirect()->back()

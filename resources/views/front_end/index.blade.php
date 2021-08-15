@@ -90,14 +90,12 @@ rel="stylesheet"
   @foreach ($product as $item)
   <div id="products" class="aaa" class="row list-group"> 
    <div class="item  col-xs-3 col-lg-3"> 
-    <div class="thumbnail"> <img class="group list-group-image" src="{{$item->image}}" alt="Sản phẩm {{$item->id}}" width="300"> 
+    <div class="thumbnail"> <img class="group list-group-image" src="{{ asset('uploads/' . $item->image) }}" alt="Sản phẩm {{$item->id}}" width="300"> 
      <div class="caption"> 
       <h4 class="group inner list-group-item-heading">{{$item->name}}</h4> 
       <div class="row"> 
-       <div class="col-xs-12 col-md-6"> 
-        <p class="lead">{{$item->price}} đ</p> 
-       </div> 
-       <div class="col-xs-12 col-md-6"> <a class="btn btn-success" href="http://hocwebgiare.com/">Chi tiết</a> 
+
+       <div class="col-xs-12 col-md-6"> <a class="btn btn-success" href="{{route('detail', ['id'=>$item->id])}}">Chi tiết</a> 
        </div> 
       </div> 
      </div> 

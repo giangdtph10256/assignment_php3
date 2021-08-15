@@ -20,24 +20,17 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <!-- Navbar brand -->
         <a class="navbar-brand mt-2 mt-lg-0" href="#">
-          
-          <img
-            src="front_end/logo.jpeg"
-            height="100"
-            alt=""
-            loading="lazy"
-          />
         </a>
         <!-- Left links -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="#">Trang chủ</a>
+            <a class="nav-link" href="{{route('front_end.index')}}">Trang chủ</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Giới thiệu</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sản phẩm</a>
+            <a class="nav-link" href="{{route('shop')}}">Shop</a>
           </li>
         </ul>
         <!-- Left links -->
@@ -46,39 +39,20 @@
   
       <!-- Right elements -->
       <div class="d-flex align-items-center">
+          <div class="container" style="float: right; width:450px;">
+              <form action="{{ route('search.product') }}" method="GET">
+                  <div style="display: flex">                
+                              <input class="form-control d-inline" placeholder="Nhập từ khóa ..." type="text" name="keyword" value="{{ old('keyword') }}" />
+                              <button class="btn btn-primary">Tìm kiếm</button>
+                  </div>
+              </form>
+          </div>
+
+
         <!-- Icon -->
-        <a class="text-reset me-3" href="#">
+        <a class="text-reset me-3" href="">
           <i class="fas fa-shopping-cart"></i>
         </a>
-  
-        <!-- Notifications -->
-        <a
-          class="text-reset me-3 dropdown-toggle hidden-arrow"
-          href="#"
-          id="navbarDropdownMenuLink"
-          role="button"
-          data-mdb-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <i class="fas fa-bell"></i>
-          <span class="badge rounded-pill badge-notification bg-danger">1</span>
-        </a>
-        <ul
-          class="dropdown-menu dropdown-menu-end"
-          aria-labelledby="navbarDropdownMenuLink"
-        >
-          <li>
-            <a class="dropdown-item" href="#">Some news</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Another news</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </li>
-
-        </ul >
-        <!-- Avatar -->
         <a
         class="dropdown-toggle d-flex align-items-center hidden-arrow"
         href="#"
